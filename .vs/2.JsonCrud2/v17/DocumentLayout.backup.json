@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\",
+  "WorkspaceRootPath": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\3.JSONCRUD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{22CB62C4-CDAF-41F1-A6E3-E0985442F008}|2.JsonCrud2.csproj|c:\\users\\vkewa\\source\\repos\\stapelzorg\\2.jsoncrud2\\persoonsbeheer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22CB62C4-CDAF-41F1-A6E3-E0985442F008}|2.JsonCrud2.csproj|solutionrelative:persoonsbeheer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vkewa\\source\\repos\\StapelZorg\\PersonCrud\\JsonFilehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22CB62C4-CDAF-41F1-A6E3-E0985442F008}|2.JsonCrud2.csproj|c:\\users\\vkewa\\source\\repos\\stapelzorg\\2.jsoncrud2\\persoonsbeheer\\services\\personservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22CB62C4-CDAF-41F1-A6E3-E0985442F008}|2.JsonCrud2.csproj|solutionrelative:persoonsbeheer\\services\\personservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22CB62C4-CDAF-41F1-A6E3-E0985442F008}|2.JsonCrud2.csproj|c:\\users\\vkewa\\source\\repos\\stapelzorg\\2.jsoncrud2\\persoonsbeheer\\data\\people.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{22CB62C4-CDAF-41F1-A6E3-E0985442F008}|2.JsonCrud2.csproj|solutionrelative:persoonsbeheer\\data\\people.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22CB62C4-CDAF-41F1-A6E3-E0985442F008}|2.JsonCrud2.csproj|c:\\users\\vkewa\\source\\repos\\stapelzorg\\2.jsoncrud2\\2.jsoncrud2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{22CB62C4-CDAF-41F1-A6E3-E0985442F008}|2.JsonCrud2.csproj|c:\\users\\vkewa\\source\\repos\\stapelzorg\\3.jsoncrud\\2.jsoncrud2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{22CB62C4-CDAF-41F1-A6E3-E0985442F008}|2.JsonCrud2.csproj|solutionrelative:2.jsoncrud2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Data\\people.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Services\\PersonServices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,59 +26,67 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "people.json",
-              "DocumentMoniker": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Data\\people.json",
-              "RelativeDocumentMoniker": "PersoonsBeheer\\Data\\people.json",
-              "ToolTip": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Data\\people.json",
-              "RelativeToolTip": "PersoonsBeheer\\Data\\people.json",
+              "DocumentIndex": 0,
+              "Title": "JsonFilehandler.cs",
+              "DocumentMoniker": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\PersonCrud\\JsonFilehandler.cs",
+              "RelativeDocumentMoniker": "..\\PersonCrud\\JsonFilehandler.cs",
+              "ToolTip": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\PersonCrud\\JsonFilehandler.cs",
+              "RelativeToolTip": "..\\PersonCrud\\JsonFilehandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-10T12:06:45.494Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T14:22:59.586Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "2.JsonCrud2",
-              "DocumentMoniker": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\2.JsonCrud2.csproj",
-              "RelativeDocumentMoniker": "2.JsonCrud2.csproj",
-              "ToolTip": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\2.JsonCrud2.csproj",
-              "RelativeToolTip": "2.JsonCrud2.csproj",
+              "Title": "people.json",
+              "DocumentMoniker": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Data\\people.json",
+              "RelativeDocumentMoniker": "..\\2.JsonCrud2\\PersoonsBeheer\\Data\\people.json",
+              "ToolTip": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Data\\people.json",
+              "RelativeToolTip": "..\\2.JsonCrud2\\PersoonsBeheer\\Data\\people.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-10T10:59:32.684Z",
-              "EditorCaption": ""
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-10T12:06:45.494Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Program.cs",
-              "RelativeDocumentMoniker": "PersoonsBeheer\\Program.cs",
-              "ToolTip": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Program.cs",
-              "RelativeToolTip": "PersoonsBeheer\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T16:41:49.095Z",
-              "EditorCaption": ""
+              "DocumentIndex": 2,
+              "Title": "2.JsonCrud2.csproj",
+              "DocumentMoniker": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\3.JSONCRUD\\2.JsonCrud2.csproj",
+              "RelativeDocumentMoniker": "2.JsonCrud2.csproj",
+              "ToolTip": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\3.JSONCRUD\\2.JsonCrud2.csproj",
+              "RelativeToolTip": "2.JsonCrud2.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-10T10:59:32.684Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Program.cs",
+              "RelativeDocumentMoniker": "..\\2.JsonCrud2\\PersoonsBeheer\\Program.cs",
+              "ToolTip": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Program.cs",
+              "RelativeToolTip": "..\\2.JsonCrud2\\PersoonsBeheer\\Program.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T16:41:49.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "PersonServices.cs",
               "DocumentMoniker": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Services\\PersonServices.cs",
-              "RelativeDocumentMoniker": "PersoonsBeheer\\Services\\PersonServices.cs",
+              "RelativeDocumentMoniker": "..\\2.JsonCrud2\\PersoonsBeheer\\Services\\PersonServices.cs",
               "ToolTip": "C:\\Users\\vkewa\\source\\repos\\StapelZorg\\2.JsonCrud2\\PersoonsBeheer\\Services\\PersonServices.cs",
-              "RelativeToolTip": "PersoonsBeheer\\Services\\PersonServices.cs",
+              "RelativeToolTip": "..\\2.JsonCrud2\\PersoonsBeheer\\Services\\PersonServices.cs",
               "ViewState": "AgIAADQBAAAAAAAAAAAcwEcBAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T15:29:26.711Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T15:29:26.711Z"
             }
           ]
         }
