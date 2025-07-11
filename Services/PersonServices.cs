@@ -9,13 +9,14 @@ namespace JSONCRUD.Services
 {
     public class PersonServices
     {
+        private const string JsonFilePath = "Data/people.json";
         private readonly JsonFileHandler _jsonHandler;
         private List<Person> _people;
 
         public PersonServices(JsonFileHandler jsonHandler)
         {
             _jsonHandler = jsonHandler;
-            _people = _jsonHandler.LoadFromJson("Data/people.json");
+            _people = _jsonHandler.LoadFromJson(JsonFilePath);
         }
 
         public void CreatePerson()
@@ -26,11 +27,7 @@ namespace JSONCRUD.Services
             string department = ReadValidatedText("Enter Department: ");
             string company = ReadValidatedText("Enter Company: ");
 
-            int newId = 1;
-            while (_people.Any(p => p.Id == newId))
-            {
-                newId++;
-            }
+            int newId = _people.Any() ? _people.Max(p => p.Id) + 1 : 1;
 
             var newPerson = new Person
             {
@@ -53,34 +50,45 @@ namespace JSONCRUD.Services
                 Console.Write(prompt);
                 string? input = Console.ReadLine()?.Trim();
 
-                if (string.IsNullOrEmpty(input))
+                if (!IsValidInput(input, out string errorMessage))
                 {
-                    ShowError("Input cannot be empty.");
+                    ShowError(errorMessage);
                     continue;
                 }
 
-                if (input.Length > 30)
-                {
-                    ShowError("Maximum 30 characters allowed.");
-                    continue;
-                }
-
-                // Toegestane tekens: letters (incl. accenten), spaties, koppeltekens, apostrof, punt
-                bool isValid = input.All(c =>
-                    char.IsLetter(c) || c == ' ' || c == '-' || c == '\'' || c == '.');
-
-                if (!isValid)
-                {
-                    ShowError("Only letters, spaces, hyphens (-), apostrophes (') and dots (.) are allowed.");
-                    continue;
-                }
-
-                // Eerste letter van elk woord met hoofdletter (met accenten behouden)
-                TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
-                string capitalized = textInfo.ToTitleCase(input.ToLower());
-
-                return capitalized;
+                return Capitalize(input!);
             }
+        }
+
+        private bool IsValidInput(string? input, out string errorMessage)
+        {
+            errorMessage = "";
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                errorMessage = "Input cannot be empty.";
+                return false;
+            }
+
+            if (input.Length > 30)
+            {
+                errorMessage = "Maximum 30 characters allowed.";
+                return false;
+            }
+
+            if (!input.All(c => char.IsLetter(c) || c == ' ' || c == '-' || c == '\'' || c == '.'))
+            {
+                errorMessage = "Only letters, spaces, hyphens (-), apostrophes (') and dots (.) are allowed.";
+                return false;
+            }
+
+            return true;
+        }
+
+        private string Capitalize(string input)
+        {
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+            return textInfo.ToTitleCase(input.ToLower());
         }
 
         private DateTime ReadValidatedDate(string prompt)
@@ -135,13 +143,6 @@ namespace JSONCRUD.Services
             DisplayPerson(person);
         }
 
-        // Helper functie voor validatie en capitalisatie in UpdatePerson:
-        private bool IsValidName(string input)
-        {
-            if (string.IsNullOrEmpty(input) || input.Length > 30) return false;
-            return input.All(c => char.IsLetter(c) || c == ' ' || c == '-' || c == '\'' || c == '.');
-        }
-
         public void UpdatePerson()
         {
             Console.Write("Enter Person Id to update: ");
@@ -160,19 +161,11 @@ namespace JSONCRUD.Services
 
             Console.Write($"New First Name (current: {person.FirstName}): ");
             string firstName = Console.ReadLine()?.Trim() ?? "";
-            if (IsValidName(firstName))
-            {
-                TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
-                person.FirstName = textInfo.ToTitleCase(firstName.ToLower());
-            }
+            if (IsValidInput(firstName, out _)) person.FirstName = Capitalize(firstName);
 
             Console.Write($"New Last Name (current: {person.LastName}): ");
             string lastName = Console.ReadLine()?.Trim() ?? "";
-            if (IsValidName(lastName))
-            {
-                TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
-                person.LastName = textInfo.ToTitleCase(lastName.ToLower());
-            }
+            if (IsValidInput(lastName, out _)) person.LastName = Capitalize(lastName);
 
             Console.Write($"New Birthdate (dd-MM-yyyy) (current: {person.BirthDate:dd-MM-yyyy}): ");
             string bdInput = Console.ReadLine()?.Trim() ?? "";
@@ -183,13 +176,13 @@ namespace JSONCRUD.Services
                     var minDate = DateTime.Today.AddYears(-120);
                     var maxDate = DateTime.Today;
 
-                    if (bd < minDate || bd > maxDate)
+                    if (bd >= minDate && bd <= maxDate)
                     {
-                        ShowError($"Birthdate must be between {minDate:dd-MM-yyyy} and {maxDate:dd-MM-yyyy}. Birthdate not updated.");
+                        person.BirthDate = bd;
                     }
                     else
                     {
-                        person.BirthDate = bd;
+                        ShowError($"Birthdate must be between {minDate:dd-MM-yyyy} and {maxDate:dd-MM-yyyy}. Birthdate not updated.");
                     }
                 }
                 else
@@ -200,19 +193,11 @@ namespace JSONCRUD.Services
 
             Console.Write($"New Department (current: {person.Department}): ");
             string department = Console.ReadLine()?.Trim() ?? "";
-            if (IsValidName(department))
-            {
-                TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
-                person.Department = textInfo.ToTitleCase(department.ToLower());
-            }
+            if (IsValidInput(department, out _)) person.Department = Capitalize(department);
 
             Console.Write($"New Company (current: {person.Company}): ");
             string company = Console.ReadLine()?.Trim() ?? "";
-            if (IsValidName(company))
-            {
-                TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
-                person.Company = textInfo.ToTitleCase(company.ToLower());
-            }
+            if (IsValidInput(company, out _)) person.Company = Capitalize(company);
 
             Console.WriteLine("Person updated successfully.");
         }
@@ -249,7 +234,7 @@ namespace JSONCRUD.Services
 
         public void SaveAndExit()
         {
-            _jsonHandler.SaveToJson("Data/people.json", _people);
+            _jsonHandler.SaveToJson(JsonFilePath, _people);
             Console.WriteLine("Data saved. Exiting program.");
         }
 
@@ -324,7 +309,7 @@ namespace JSONCRUD.Services
             Console.Write("Select an option (1-3): ");
             string choice = Console.ReadLine()?.Trim() ?? "";
 
-            List<Person> sortedList = choice switch
+            List<Person>? sortedList = choice switch
             {
                 "1" => _people.OrderBy(p => p.FirstName).ThenBy(p => p.LastName).ToList(),
                 "2" => _people.OrderBy(p => p.BirthDate).ToList(),
@@ -352,9 +337,7 @@ namespace JSONCRUD.Services
             Console.WriteLine(new string('=', 40));
             Console.WriteLine("{0," + ((40 + "STATISTICS".Length) / 2) + "}", "STATISTICS");
             Console.WriteLine(new string('=', 40));
-
             Console.WriteLine($"Total number of persons: {totalPersons}");
-
             Console.WriteLine(new string('=', 40));
             Console.ResetColor();
         }
